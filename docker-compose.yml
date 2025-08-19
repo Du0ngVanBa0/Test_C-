@@ -1,0 +1,36 @@
+services:
+  mysql:
+    image: mysql:8.0.43-debian
+    container_name: mysql-sapo
+    environment:
+      MYSQL_ROOT_PASSWORD: vanbao123
+      MYSQL_DATABASE: music
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - sapota_network
+
+  sapota_api:
+    build: 
+      context: ./sapota
+    container_name: sapota_api
+    ports:
+      - "5000:8080" 
+    depends_on:
+      - mysql
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=mysql-sapo;Database=music;Uid=root;Pwd=vanbao123;
+    networks:
+      - sapota_network
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+
+networks:
+  sapota_network:
+    driver: bridge

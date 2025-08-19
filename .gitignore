@@ -1,0 +1,51 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+logs/
+
+# Visual Studio Code
+.vscode/
+
+# Visual Studio
+.vs/
+
+# Rider
+.idea/
+*.sln.iml
+
+# Packages
+*.nupkg
+*.snupkg
+packages/
+*.nuget/
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+*.pdb
+*.mdb
+
+# Generated files
+*.generated.cs
+*.designer.cs
+
+# Publish output
+wwwroot/
+
+# Configuration files
+appsettings*.json
+secrets.json
+
+# OS-specific files
+.DS_Store
+Thumbs.db
