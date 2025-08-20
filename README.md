@@ -112,6 +112,21 @@ curl -X POST http://localhost:5000/api/Auth/register -H "Content-Type: applicati
 - `Controllers/` – chứa các API controller
 - `Repository/`, `Model/`, `Service/` – mã nguồn chính backend
 
+---
+
+## 5. Chạy unit test
+
+#### **Bước 1:** Vào thư mục FE
+
+```sh
+cd Sapota
+```
+#### **Bước 2:** Test
+
+```sh
+dotnet test
+```
+
 # Music FE
 ## Chạy FE với thư mục `test-sapota_fe`
 
