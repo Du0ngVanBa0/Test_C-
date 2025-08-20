@@ -98,9 +98,7 @@ dotnet run --project ./Sapota/Sapota.csproj
 - Có thể dùng [Postman](https://www.postman.com/downloads/) hoặc `curl` để kiểm tra nhanh:
 
 ```sh
-curl -X POST http://localhost:5000/api/Auth/register \
-  -H "Content-Type: application/json" \
-  -d '{"name":"TestUser","email":"test@gmail.com","password":"123456"}'
+curl -X POST http://localhost:5000/api/Auth/register -H "Content-Type: application/json" -d '{"name":"TestUser","email":"test@gmail.com","password":"123456"}'
 ```
 
 ---
@@ -113,3 +111,44 @@ curl -X POST http://localhost:5000/api/Auth/register \
 - `Sapota.csproj` – file cài đặt các package nuget
 - `Controllers/` – chứa các API controller
 - `Repository/`, `Model/`, `Service/` – mã nguồn chính backend
+
+# Music FE
+## Chạy FE với thư mục `test-sapota_fe`
+
+### Yêu cầu
+
+- Đã cài [Node.js](https://nodejs.org/en/download/) (>= v18)
+- Đã cài [pnpm](https://pnpm.io/installation) hoặc [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
+
+### Các bước thực hiện
+
+#### **Bước 1:** Vào thư mục FE
+
+```sh
+cd test-sapota_fe
+```
+
+#### **Bước 2:** Cài dependencies
+
+```sh
+pnpm install
+# hoặc npm install
+```
+
+#### **Bước 3:** Nếu muốn đổi clientId thì sửa file `.env` (trong thư mục test-sapota_fe)
+
+```env
+VITE_GOOGLE_CLIENT_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com
+```
+
+#### **Bước 4:** Chạy FE (Vite)
+
+```sh
+pnpm dev
+# npm run dev
+# vite
+```
+
+- FE mặc định chạy tại [http://localhost:5173](http://localhost:5173)  
+  (hoặc cổng do Vite báo)
